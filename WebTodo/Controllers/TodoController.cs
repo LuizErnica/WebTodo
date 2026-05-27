@@ -12,19 +12,9 @@ namespace WebTodo.Controllers
     {
         [HttpGet]
         [Route("todos")]
-        //public List<Todo> Get()
-        //public List<Todo> Get([FromServices] AppDbContext context)
-        //public async Task<IActionResult> Get([FromServices] AppDbContext context)
         public async Task<IActionResult> GetAsync(
             [FromServices] AppDbContext context)
         {
-            //return
-            //[
-            //    new() { Id = 1, Title = "Learn C#", Done = false },
-            //    new() { Id = 2, Title = "Build a web app", Done = false },
-            //    new() { Id = 3, Title = "Deploy to Azure", Done = false }
-            // ];
-
             var todos = await context
                 .Todos
                 .AsNoTracking()
